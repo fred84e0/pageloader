@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+   
+   
+   :root{
+
+--animation-time: 3s;
+
+   }
+    body{
+    height: 100vh;
+    width: 100%;
+    }
+    .txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    }
+
+.loadimg{
+    max-width: 500px;
+    }
+.load-done{
+    opacity: 0;
+    pointer-events: none;
+    }
+.loader{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    transition: 0.4s ease;
+    }
+
+.cls-1 {
+     fill: #ed7d31;
+    }
+
+
+.letter-i{
+stroke-dasharray:90;
+stroke-dashoffset: 0;
+animation: dash-i linear forwards infinite;
+animation-duration: var(--animation-time);
+
+}
+
+.letter-c{
+
+stroke-dasharray:194.5;
+stroke-dashoffset: 0;
+animation: dash-c linear forwards infinite;
+animation-duration: var(--animation-time);
+}
+
+.loader{
+     animation: load infinite ease-in-out; 
+     animation-duration: var(--animation-time);
+}
+
+
+@keyframes dash-i {
+
+    0%{
+        stroke-dashoffset: 90;
+        opacity: 0;
+    }
+    30%{
+        stroke-dashoffset: 90;  
+        opacity: 0;
+    }
+    40%{ stroke-dashoffset: 0;
+        opacity: 1;
+        }
+    100%{ stroke-dashoffset: 0;
+            opacity: 1;
+        }
+    
+}
+@keyframes dash-c {
+
+    0%{
+        stroke-dashoffset: 194.5; 
+        opacity: 0;
+    }
+    40%{
+        stroke-dashoffset: 194.5; 
+        opacity:0 ; 
+    }
+    60%{ 
+        stroke-dashoffset: 0; 
+        opacity: 1;
+    }
+
+    100%{ 
+        stroke-dashoffset: 0;            
+    }
+    
+}
+
+@keyframes load{
+0%{ 
+    transform: rotate(0deg)scale(.6);
+}
+30%{ transform: rotate(720deg) scale(.6);
+  
+    }
+100%{ transform: rotate(720deg) scale(.6);
+    
+    }
+}
+
+    </style>
+</head>
+<body>
+   
+    
+    
+    <div class="txt">
+        <h1>centered text</h1>
+  <p>centered smaller text</p>
+</div>
+
+
+<div class="loader">
+
+    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144">
+        <title>box-logo-black</title>
+        <g>
+          <path class="cls-1" d="M17.11,3.94H3.26V140.06H17.11V144H0V0H17.11Z"/>
+  
+          <line class="letter-i letter" x1="33" y1="26" x2="33" y2="110" stroke="#383838" stroke-width="3" />
+          <path class="letter-c letter" fill="none" stroke="#383838" stroke-width="3" d="M115.35,51.32Q114,39.37,107,33.15T87.64,26.93a25.11,25.11,0,0,0-20.42,9.52Q59.44,46,59.44,62V74.69A44.59,44.59,0,0,0,62.9,92.8a28.07,28.07,0,0,0,9.92,12.29,25.74,25.74,0,0,0,14.82,4.4q12.45,0,19.46-6.13T115.35,85"/>
+
+          <path class="cls-1" d="M126.89,0H144V144H126.89v-3.94h13.79V3.94H126.89Z"/>
+        </g>
+      </svg>
+</div>
+
+
+<img class="loadimg" src="lassonews-screen.jpg" alt="lasso">
+
+<script>
+
+window.addEventListener('load', () => {
+    const loader = document.querySelector(".loader");
+    loader.classList.add("load-done");
+});
+        
+    
+    </script>
+</body>
+</html>
